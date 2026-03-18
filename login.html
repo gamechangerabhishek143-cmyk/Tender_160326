@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MJ Bid's Tender | Login & Registration</title>
+    <meta name="description" content="Login to your MJ Bid's Tender portal or create a new vendor account.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="src/main/css/styles.css">
+</head>
+
+<body>
+    <!-- Single Page App Container Base -->
+    <div id="app-container">
+        
+        <!-- View: Login -->
+        <div id="view-login" class="view">
+            <div class="login-container">
+                <div class="login-card animate-on-scroll">
+                    <div class="login-header">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" class="brand-icon">
+                            <rect x="3" y="3" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="2" />
+                            <rect x="14" y="3" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="2" />
+                            <rect x="14" y="14" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="2" />
+                            <path d="M3 14H10V21H3V14Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round" />
+                        </svg>
+                        <h2>Welcome Back</h2>
+                        <p>Enter your credentials to access your dashboard.</p>
+                    </div>
+                    <form id="loginForm" class="login-form">
+                        <div class="form-group">
+                            <label for="username">Email Address</label>
+                            <input type="email" id="username" class="form-control" placeholder="Enter your email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" id="password" class="form-control" placeholder="Enter your password" required>
+                        </div>
+                        <div id="loginError" class="error-message hidden">Invalid credentials. Please try again.</div>
+                        <button type="submit" class="btn btn-primary w-full btn-large">Login to Account</button>
+                        <p class="text-center mt-4 text-secondary">Don't have an account? <a href="#" id="goToRegisterBtn" class="text-primary hover-underline">Sign up</a></p>
+                        <a href="index.html" class="btn btn-ghost w-full mt-4" style="text-decoration: none; text-align: center;">&larr; Back to Home</a>
+                    </form>
+                </div>
+            </div>
+        </div> <!-- End view-login -->
+
+        <!-- View: Register -->
+        <div id="view-register" class="view hidden">
+            <div class="login-container">
+                <div class="login-card animate-on-scroll">
+                    <div class="login-header">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" class="brand-icon">
+                            <rect x="3" y="3" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="2" />
+                            <rect x="14" y="3" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="2" />
+                            <rect x="14" y="14" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="2" />
+                            <path d="M3 14H10V21H3V14Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round" />
+                        </svg>
+                        <h2>Vendor Registration</h2>
+                        <p>Create an account to start bidding on government contracts.</p>
+                    </div>
+                    <form id="registerForm" class="login-form">
+                        <div class="form-group">
+                            <label for="regEmail">Email Address</label>
+                            <input type="email" id="regEmail" class="form-control" placeholder="Enter your email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="regPassword">Password</label>
+                            <input type="password" id="regPassword" class="form-control" placeholder="Create a password" required minlength="6">
+                        </div>
+                        <div class="form-group">
+                            <label for="regCompany">Company Name</label>
+                            <input type="text" id="regCompany" class="form-control" placeholder="Your business name" required>
+                        </div>
+                        <div id="registerError" class="error-message hidden">Registration failed.</div>
+                        <div id="registerSuccess" class="success-message hidden" style="color: #10b981; background: rgba(16, 185, 129, 0.1); border: 1px solid rgba(16, 185, 129, 0.2); padding: 12px; border-radius: 8px; font-size: 0.875rem; margin-bottom: 24px; text-align: center;">Registration successful! You can now log in.</div>
+                        <button type="submit" class="btn btn-primary w-full btn-large">Create Account</button>
+                        <p class="text-center mt-4 text-secondary">Already have an account? <a href="#" id="goToLoginBtn" class="text-primary hover-underline">Log in</a></p>
+                        <a href="index.html" class="btn btn-ghost w-full mt-4" style="text-decoration: none; text-align: center;">&larr; Back to Home</a>
+                    </form>
+                </div>
+            </div>
+        </div> <!-- End view-register -->
+
+    </div> <!-- End app-container -->
+
+    <!-- Supabase CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="src/main/js/app.js"></script>
+</body>
+</html>
